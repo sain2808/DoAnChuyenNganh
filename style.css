@@ -1,0 +1,771 @@
+/* CSS cơ bản cho toàn trang */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f8f9fa; /* Màu nền xám nhạt */
+  color: #333; /* Màu chữ */
+}
+
+/* Tiêu đề */
+h1 {
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2rem;
+  color: #030303; /* Màu đỏ */
+}
+
+h2, h3 { /* Áp dụng cho cả h2 và h3 */
+  font-weight: bold;
+  text-align: center;
+  color: #000000; /* Màu đen */
+}
+
+/* Navbar */
+#navbar {
+  background: #bdcebf;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex; /* Thêm display: flex */
+  align-items: center; /* Căn giữa các mục theo chiều dọc */
+}
+
+#logo {
+  font-size: 36px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  text-shadow: 0px 1px 1px rgb(0, 0, 0);
+}
+
+#logo span {
+  color: rgb(44, 204, 204);
+}
+
+.navbar-nav {
+  margin-left: 20px;
+}
+
+#navbar .container {
+  display: flex; /* Thêm display: flex cho container */
+  justify-content: space-between; /* Phân bố đều khoảng cách giữa các mục */
+  align-items: center; /* Căn giữa các mục theo chiều dọc */
+  width: 100%; 
+}
+
+#navbar .navbar-nav {
+  margin: 0; /* Loại bỏ margin mặc định */
+  display: flex; /* Thêm display: flex */
+}
+
+#navbar .nav-item {
+  margin-right: 20px; /* Thêm khoảng cách giữa các mục */
+}
+.nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  letter-spacing: 1px;
+  border-radius: 3px;
+  transition: 0.5s ease;
+}
+
+.nav-item .nav-link:hover {
+  background: rgb(44, 204, 204);
+  color: white;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  background-color: #bdcebf;
+  border: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+}
+
+.dropdown-menu .dropdown-item {
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #ae2323;
+  color: #fff;
+}
+
+/* Cart Button in Navbar */
+.btn-cart {
+  position: relative;
+  font-size: 1.5rem;
+  color: #000000;
+  background-color: transparent;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-cart:hover {
+  color: #2ccccc;
+  transform: scale(1.2);
+}
+
+.btn-cart .badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 50%;
+  padding: 5px 7px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-cart .badge:hover {
+  background-color: #d90000;
+}
+
+/* User Button in Navbar */
+.btn-user {
+  font-size: 1.5rem;
+  color: #000000;
+  background-color: transparent;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-user:hover {
+  color: #2ccccc;
+  transform: scale(1.2);
+}
+
+
+/* Item card */
+.imgcrop {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card {
+  border: 1px solid #e0e0e0; /* Viền xám nhạt */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card a { /* Bỏ gạch chân cho tất cả các liên kết trong card */
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+  background-color: #fff; /* Nền trắng cho card-body */
+  flex: 1;
+}
+
+.card-title {
+  color: #ff5500; /* Màu xanh cho tiêu đề */
+  font-size: 1.5rem; /* Tăng kích thước tiêu đề */
+  margin-bottom: 10px;
+}
+
+.card-text { /* Mô tả sản phẩm */
+  color: #000; /* Màu đen cho mô tả */
+  margin-bottom: 10px;
+}
+
+.card-price { /* Giá sản phẩm */
+  font-size: 1.2rem;
+  color: #dc3545; /* Màu đỏ cho giá */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-quantity { /* Số lượng sản phẩm */
+  color: #28a745; /* Màu xanh lá cây cho số lượng */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card-status { /* Trạng thái còn hàng/hết hàng */
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.btn-xem-chi-tiet {
+  background-color: #ffc107;
+  color: #0a0a0a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer; /* Thêm con trỏ chuột */
+}
+
+.btn-xem-chi-tiet:hover {
+  background-color: #e0a800; /* Màu vàng đậm hơn khi hover */
+}
+
+/* CSS cho trang chi tiết sản phẩm */
+.product-detail-container {
+  padding: 20px;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-info {
+  margin-top: 20px;
+}
+
+.product-title {
+  font-size: 2rem; /* Tăng kích thước chữ cho tên sản phẩm */
+  font-weight: bold;
+  color: #000000; /* Màu xanh dương */
+  margin-bottom: 10px;
+  text-decoration: none; /* Bỏ gạch chân cho tên sản phẩm */
+}
+
+.product-brand,
+.product-status {
+  font-weight: bold; /* In đậm cho trạng thái còn hàng/hết hàng */
+  margin-bottom: 20px;
+}
+
+.product-price {
+  font-size: 1.5rem; /* Tăng kích thước chữ cho giá tiền */
+  color: #dc3545; /* Màu đỏ */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  color: #000; /* Màu đen cho mô tả */
+  margin-bottom: 10px;
+}
+.product-status.con-hang { /* Khi có class "con-hang" */
+  color: green;
+  font-weight: bold;
+}
+
+.product-status.het-hang { /* Khi có class "het-hang" */
+  color: red;
+  font-weight: bold;
+}
+
+/* ... (Các CSS cho trang chi tiết sản phẩm - giữ nguyên) */
+
+/* Cart container styling */
+.cart-container {
+  padding: 20px;
+}
+
+/* ... (Các CSS cho trang giỏ hàng - giữ nguyên) */
+
+/* Featured Blog Post */
+.featured-blog-post {
+  background-color: #f8f9fa;
+  padding: 50px 0;
+}
+
+.featured-blog-post .card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.featured-blog-post .card-img-top {
+  height: 400px; /* Điều chỉnh chiều cao hình ảnh */
+  object-fit: cover;
+}
+
+.featured-blog-post .card-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.featured-blog-post .card-title:hover{
+  color:red;
+}
+
+.featured-blog-post .card-text {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+.blog-post {
+  margin-bottom: 30px;
+}
+
+.blog-post img {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover; 
+  margin-bottom: 15px;
+}
+
+.blog-post h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.blog-post h2 a {
+  color: #333; 
+  text-decoration: none; 
+}
+
+.blog-post h2 a:hover {
+  color: #007bff; 
+}
+
+.blog-post p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.read-more {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f31313b1;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.marquee-container {
+  background-color: #064608; /* Màu nền */
+  color: white; /* Màu chữ */
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 9s linear infinite;
+}
+
+
+.info-box {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Responsive Design */
+/* CSS cho màn hình lớn hơn 992px */
+@media (min-width: 992px) {
+  /* CSS cho màn hình lớn, ví dụ: hiển thị menu đầy đủ */
+  #navbar .navbar-nav {
+    display: flex; /* Hiển thị menu */
+  }
+
+  #navbar .navbar-toggler {
+    display: none; /* Ẩn nút toggle menu */
+  }
+
+  /* Các style khác cho màn hình lớn */
+  .col-lg-3 {
+    /* Điều chỉnh kích thước cột cho màn hình lớn */
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+/* CSS cho màn hình từ 768px đến 992px */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* CSS cho màn hình trung bình, ví dụ: điều chỉnh kích thước cột */
+  .col-md-4 {
+    /* Điều chỉnh kích thước cột cho màn hình trung bình */
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  .footer-click .title-menu {
+    font-size: 16px;
+  }
+
+  .footer-click .title-menu i {
+    /* Hiển thị icon mũi tên xuống trên màn hình nhỏ */
+    display: inline-block !important; 
+  }
+
+  .footer-click .list-menu {
+    /* Ẩn danh sách menu mặc định trên màn hình nhỏ */
+    display: none; 
+  }
+
+  .footer-click .title-menu.clicked + .list-menu {
+    /* Hiển thị danh sách menu khi click vào tiêu đề trên màn hình nhỏ */
+    display: block; 
+  }
+
+  /* Các style khác cho màn hình trung bình */
+}
+
+/* CSS cho màn hình nhỏ hơn 768px */
+@media (max-width: 767px) {
+  /* CSS cho màn hình nhỏ, ví dụ: ẩn menu và hiển thị nút toggle */
+  
+
+  #navbar .navbar-toggler {
+    display: block; /* Hiển thị nút toggle menu */
+  }
+
+  /* Các style khác cho màn hình nhỏ */
+  .col-sm-6 {
+    /* Điều chỉnh kích thước cột cho màn hình nhỏ */
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+/* CSS cho trang giỏ hàng */
+.cart-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-header h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.cart-table th {
+  background-color: #f5f5f5;
+}
+
+.cart-item-name {
+  display: block;
+  /* Hiển thị tên sản phẩm trên một dòng mới */
+}
+
+.cart-item-price,
+.cart-item-total {
+  text-align: right;
+}
+
+.cart-item-remove {
+  text-align: center;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.checkout-button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+/* CSS cho trang checkout */
+.checkout-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-header h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.checkout-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.checkout-table th,
+.checkout-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.checkout-table th {
+  background-color: #f5f5f5;
+}
+
+.checkout-item-name {
+  display: block;
+  /* Hiển thị tên sản phẩm trên một dòng mới */
+}
+
+.checkout-item-price,
+.checkout-item-total {
+  text-align: right;
+}
+
+.checkout-total {
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.checkout-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.checkout-form input,
+.checkout-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.place-order-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* CSS cho trang complete (hoàn tất đơn hàng) */
+.complete-container {
+  max-width: 800px;
+  margin: 50px auto; /* Khoảng cách trên dưới lớn hơn */
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.complete-container h1 {
+  color: #28a745; /* Màu xanh lá cây */
+  margin-bottom: 20px;
+}
+
+.complete-container h3 {
+  margin-top: 30px;
+  color: #007bff; /* Màu xanh dương */
+}
+
+.complete-container p {
+  margin-bottom: 10px;
+}
+
+.complete-container .btn-primary {
+  display: inline-block;
+  margin-top: 20px;
+}
+.footer {
+  background-color: #fff; /* Màu nền trắng */
+}
+
+.mid-footer {
+  /*  Thêm padding để tạo khoảng cách giữa nội dung và các cạnh  */
+  padding-top: 30px;
+  padding-bottom: 30px; 
+}
+
+.mid-footer .container {
+  /* Giới hạn chiều rộng tối đa của container */
+  max-width: 1200px; 
+  margin: 0 auto; /* Căn giữa container */
+}
+
+.footer-click {
+  /* Thêm padding để tạo khoảng cách giữa các cột */
+  padding: 0 15px; 
+}
+
+.footer-click .title-menu {
+  /*  Tùy chỉnh font chữ cho tiêu đề  */
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-click .title-menu.clicked {
+  /*  Thêm hiệu ứng khi click vào tiêu đề (nếu cần)  */
+  cursor: pointer;
+}
+
+.footer-click .navbar-brand {
+  /*  Tùy chỉnh logo  */
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.footer-click .navbar-brand span {
+  /*  Tùy chỉnh chữ cái đầu của logo  */
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.footer-click p {
+  /*  Tùy chỉnh đoạn văn bản giới thiệu  */
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.footer-click .single-contact {
+  /*  Tùy chỉnh kiểu hiển thị cho thông tin liên lạc  */
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.footer-click .single-contact i {
+  /*  Tùy chỉnh icon  */
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.footer-click .single-contact .content {
+  /*  Tùy chỉnh nội dung thông tin liên lạc  */
+  font-size: 14px;
+}
+
+.footer-click .single-contact .content span {
+  /*  Tùy chỉnh địa chỉ  */
+  display: block;
+}
+
+.footer-click .single-contact .content a {
+  /*  Tùy chỉnh liên kết  */
+  color: #007bff; /* Màu xanh mặc định */
+  text-decoration: none;
+}
+
+.footer-click .list-menu {
+  /*  Tùy chỉnh danh sách menu  */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-click .list-menu .li_menu {
+  /*  Tùy chỉnh từng mục trong danh sách menu  */
+  margin-bottom: 10px;
+}
+
+.footer-click .list-menu .link {
+  /*  Tùy chỉnh liên kết trong danh sách menu  */
+  color: #333; /* Màu xám đậm mặc định */
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-click .social-footer {
+  /*  Tùy chỉnh phần mạng xã hội  */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.footer-click .social-footer .title-menu {
+  /*  Tùy chỉnh tiêu đề mạng xã hội  */
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.footer-click .social-footer .div-social {
+  /*  Tùy chỉnh các icon mạng xã hội  */
+  display: flex;
+  justify-content: center; /* Căn giữa các icon */
+  align-items: center;
+}
+
+.footer-click .social-footer .div-social a {
+  /*  Tùy chỉnh khoảng cách giữa các icon  */
+  margin: 0 5px;
+}
+.gioi-thieu {
+  padding: 50px 0; 
+}
+
+.gioi-thieu h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.gioi-thieu h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.gioi-thieu p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.gioi-thieu ul {
+  list-style: disc; 
+  padding-left: 40px; 
+  margin-bottom: 20px;
+}
+
+.gioi-thieu li {
+  font-size: 16px;
+  line-height: 1.5;
+}
+/* CSS cho carousel */
+#carouselExampleInterval .carousel-item img {
+  height: auto;
+  width: 100px; 
+  object-fit: cover; 
+}
